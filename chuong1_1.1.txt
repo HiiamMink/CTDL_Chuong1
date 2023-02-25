@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+struct phanso{
+    int tu;
+    int mau;
+};
+
+void nhap(phanso &a){
+    cout << "nhap tu so: ";
+    cin >> a.tu;
+    do{
+        cout << "nhap mau so: ";
+        cin >> a.mau;
+        if (a.mau <0)
+            cout << "khong hop le! nhap lai";
+    }while (a.mau < 0);
+}
+void xuat (phanso a){
+    cout << "phan so : "<< a.tu <<"/" <<a.mau;    
+}
+int main(){
+    struct phanso ps;
+    nhap(ps);
+    xuat(ps);
+    return 0;
+}
