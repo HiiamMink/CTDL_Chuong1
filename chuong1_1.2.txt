@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+struct honso{
+    int nguyen;
+    int tu;
+    int mau;
+};
+void nhap_hs (honso &hs){
+    do{
+        cout << "nhap tu so:";
+        cin >> hs.tu;
+        cout << "nhap mau so:";
+        cin >> hs.mau;
+        if (hs.mau == 0){
+            cout << "nhap sai! nhap lai\n";
+        }
+    }while (hs.mau == 0); 
+    
+}
+
+void xuat_hs (honso hs){
+    if(hs.tu > 0 && hs.mau > 0){
+        cout << "hon so:" <<  hs.tu / hs.mau << " " << hs.tu%hs.mau <<"/"<< hs.mau;
+    }
+    if (hs.tu <0 && hs.mau <0){
+        cout << "hon so:" <<  hs.tu / hs.mau << " " << -1*(hs.tu%hs.mau) <<"/"<< -1*hs.mau;
+    }
+    if (hs.tu < 0 && hs.mau > 0){
+        cout << "hon so:" <<  hs.tu / hs.mau << " " << -1* (hs.tu%hs.mau) <<"/"<< hs.mau;
+    }
+}
+int main(){
+    struct honso a;
+    nhap_hs(a);
+    xuat_hs(a);
+    return 0;
+}
